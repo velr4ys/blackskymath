@@ -485,7 +485,447 @@
         </div>
 
         <!-- Continue with other sections... -->
-        <!-- Matrix, Unit Conversion, Number Theory, Financial, etc. -->
+                <!-- Matrix Operations -->
+        <div class="section" id="matrix-commands">
+            <h2>Matrix Operations</h2>
+            
+            <div class="command">
+                <div class="command-name">!matrix / !mat</div>
+                <div class="usage">Usage: !matrix &lt;operation&gt; &lt;args&gt;</div>
+                <div class="description">
+                    Perform matrix operations including creation, addition, multiplication, and transposition.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!matrix create 2 [[1, 2], [3, 4]]</code>
+                    <code class="example">!matrix add matrix1 matrix2</code>
+                    <code class="example">!matrix multiply matrix1 matrix2</code>
+                    <code class="example">!matrix transpose matrix1</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!det</div>
+                <div class="usage">Usage: !det &lt;matrix_name&gt;</div>
+                <div class="description">
+                    Calculate the determinant of a matrix.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!det matrix1</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!inv</div>
+                <div class="usage">Usage: !inv &lt;matrix_name&gt;</div>
+                <div class="description">
+                    Calculate the inverse of a matrix.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!inv matrix1</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!eigen</div>
+                <div class="usage">Usage: !eigen &lt;matrix_name&gt;</div>
+                <div class="description">
+                    Calculate eigenvalues and eigenvectors of a matrix.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!eigen matrix1</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Unit Conversion -->
+        <div class="section" id="unit-commands">
+            <h2>Unit Conversion</h2>
+            
+            <div class="command">
+                <div class="command-name">!convert / !conv</div>
+                <div class="usage">Usage: !convert &lt;value&gt; &lt;from_unit&gt; to &lt;to_unit&gt;</div>
+                <div class="description">
+                    Convert between different units of measurement. Supported categories include length, mass, time, temperature, volume, pressure, energy, power, speed, and angle.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!convert 100 cm to m</code>
+                    <code class="example">!convert 32 f to c</code>
+                    <code class="example">!convert 1 au to km</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Number Theory -->
+        <div class="section" id="number-commands">
+            <h2>Number Theory</h2>
+            
+            <div class="command">
+                <div class="command-name">!prime / !pr</div>
+                <div class="usage">Usage: !prime &lt;operation&gt; &lt;args&gt;</div>
+                <div class="description">
+                    Perform prime number operations including checking, finding next/previous primes, generating prime ranges, and factorization.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!prime check 17</code>
+                    <code class="example">!prime next 100</code>
+                    <code class="example">!prime range 1 100</code>
+                    <code class="example">!prime factor 12345</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!gcd</div>
+                <div class="usage">Usage: !gcd &lt;num1&gt; &lt;num2&gt; [...]</div>
+                <div class="description">
+                    Calculate greatest common divisor of two or more numbers.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!gcd 48 18 12</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!lcm</div>
+                <div class="usage">Usage: !lcm &lt;num1&gt; &lt;num2&gt; [...]</div>
+                <div class="description">
+                    Calculate least common multiple of two or more numbers.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!lcm 4 6 8</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!factorint</div>
+                <div class="usage">Usage: !factorint &lt;number&gt;</div>
+                <div class="description">
+                    Factor an integer into its prime components.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!factorint 123456</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Calculations -->
+        <div class="section" id="finance-commands">
+            <h2>Financial Calculations</h2>
+            
+            <div class="command">
+                <div class="command-name">!finance / !fin</div>
+                <div class="usage">Usage: !finance &lt;operation&gt; &lt;args&gt;</div>
+                <div class="description">
+                    Perform financial calculations including future value, present value, payments, interest rates, and more.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!finance fv 0.05 10 1000 0</code>
+                    <code class="example">!finance pv 0.05 10 1000 0</code>
+                    <code class="example">!finance pmt 0.05/12 360 100000 0</code>
+                    <code class="example">!finance rate 360 -500 100000 0</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!amort / !am</div>
+                <div class="usage">Usage: !amort &lt;principal&gt; &lt;rate&gt; &lt;term&gt; [type]</div>
+                <div class="description">
+                    Generate a loan amortization schedule.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!amort 100000 0.05 360</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!roi</div>
+                <div class="usage">Usage: !roi &lt;gain&gt; &lt;cost&gt;</div>
+                <div class="description">
+                    Calculate return on investment.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!roi 1500 1000</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Date/Time Operations -->
+        <div class="section" id="date-commands">
+            <h2>Date/Time Operations</h2>
+            
+            <div class="command">
+                <div class="command-name">!date</div>
+                <div class="usage">Usage: !date &lt;operation&gt; &lt;args&gt;</div>
+                <div class="description">
+                    Perform date calculations including date arithmetic, weekday determination, and leap year checks.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!date now</code>
+                    <code class="example">!date add 2023-01-01 30</code>
+                    <code class="example">!date diff 2023-01-01 2023-12-31</code>
+                    <code class="example">!date weekday 2023-01-01</code>
+                    <code class="example">!date leap 2024</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!time</div>
+                <div class="usage">Usage: !time &lt;time&gt; &lt;from_tz&gt; &lt;to_tz&gt;</div>
+                <div class="description">
+                    Convert between timezones.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!time 12:00:00 UTC EST</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!countdown</div>
+                <div class="usage">Usage: !countdown &lt;seconds&gt;</div>
+                <div class="description">
+                    Start a countdown timer.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!countdown 60</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Commands -->
+        <div class="section" id="system-commands">
+            <h2>System Commands</h2>
+            
+            <div class="command">
+                <div class="command-name">!system</div>
+                <div class="usage">Usage: !system</div>
+                <div class="description">
+                    Display system information including Python and library versions.
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!bench</div>
+                <div class="usage">Usage: !bench</div>
+                <div class="description">
+                    Run performance benchmarks for math operations.
+                </div>
+            </div>
+        </div>
+
+        <!-- Programming -->
+        <div class="section" id="programming-commands">
+            <h2>Programming</h2>
+            
+            <div class="command">
+                <div class="command-name">!eval</div>
+                <div class="usage">Usage: !eval &lt;python_code&gt;</div>
+                <div class="description">
+                    Evaluate restricted Python code (basic operations only).
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!eval [x**2 for x in range(5)]</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!lambda</div>
+                <div class="usage">Usage: !lambda &lt;args&gt;:&lt;expression&gt;</div>
+                <div class="description">
+                    Create a lambda function for later use.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!lambda x: x**2 + 2*x + 1</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Graph Theory -->
+        <div class="section" id="graph-commands">
+            <h2>Graph Theory</h2>
+            
+            <div class="command">
+                <div class="command-name">!graph</div>
+                <div class="usage">Usage: !graph &lt;operation&gt; &lt;args&gt;</div>
+                <div class="description">
+                    Perform graph theory operations including graph creation, node/edge addition, and shortest path calculation.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!graph create my_graph undirected</code>
+                    <code class="example">!graph add_node my_graph A</code>
+                    <code class="example">!graph add_edge my_graph A B</code>
+                    <code class="example">!graph shortest_path my_graph A D</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Theory -->
+        <div class="section" id="game-commands">
+            <h2>Game Theory</h2>
+            
+            <div class="command">
+                <div class="command-name">!game</div>
+                <div class="usage">Usage: !game &lt;operation&gt; &lt;args&gt;</div>
+                <div class="description">
+                    Analyze game theory scenarios including Prisoner's Dilemma and Battle of the Sexes.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!game list</code>
+                    <code class="example">!game show prisoners_dilemma</code>
+                    <code class="example">!game nash prisoners_dilemma</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Chemistry -->
+        <div class="section" id="chem-commands">
+            <h2>Chemistry</h2>
+            
+            <div class="command">
+                <div class="command-name">!chem</div>
+                <div class="usage">Usage: !chem &lt;operation&gt; &lt;args&gt;</div>
+                <div class="description">
+                    Perform chemistry calculations including element lookup, molar mass calculation, and equation balancing.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!chem element H</code>
+                    <code class="example">!chem molar_mass H2O</code>
+                    <code class="example">!chem balance H2 + O2 = H2O</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Physics -->
+        <div class="section" id="physics-commands">
+            <h2>Physics</h2>
+            
+            <div class="command">
+                <div class="command-name">!physics</div>
+                <div class="usage">Usage: !physics &lt;operation&gt; &lt;args&gt;</div>
+                <div class="description">
+                    Perform physics calculations including constant lookup and kinematic equations.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!physics constant speed_of_light</code>
+                    <code class="example">!physics kinematic d=v0t+0.5at^2 v0=10 t=5 a=9.8</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engineering -->
+        <div class="section" id="eng-commands">
+            <h2>Engineering</h2>
+            
+            <div class="command">
+                <div class="command-name">!eng</div>
+                <div class="usage">Usage: !eng &lt;operation&gt; &lt;args&gt;</div>
+                <div class="description">
+                    Access engineering tools and formulas for beam deflection, stress-strain, and fluid flow.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!eng list</code>
+                    <code class="example">!eng formula beam_deflection</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Math Puzzles -->
+        <div class="section" id="puzzle-commands">
+            <h2>Math Puzzles</h2>
+            
+            <div class="command">
+                <div class="command-name">!puzzle</div>
+                <div class="usage">Usage: !puzzle &lt;operation&gt; &lt;args&gt;</div>
+                <div class="description">
+                    Solve math puzzles and brain teasers with hints and solutions.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!puzzle list</code>
+                    <code class="example">!puzzle show 1</code>
+                    <code class="example">!puzzle solve 1 232792560</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Math Quiz -->
+        <div class="section" id="quiz-commands">
+            <h2>Math Quiz</h2>
+            
+            <div class="command">
+                <div class="command-name">!quiz</div>
+                <div class="usage">Usage: !quiz [stop]</div>
+                <div class="description">
+                    Start an interactive math quiz with random arithmetic problems.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!quiz</code>
+                    <code class="example">!quiz stop</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculator Modes -->
+        <div class="section" id="mode-commands">
+            <h2>Calculator Modes</h2>
+            
+            <div class="command">
+                <div class="command-name">!menu</div>
+                <div class="usage">Usage: !menu</div>
+                <div class="description">
+                    Show the calculator mode menu with all available modes.
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!mode</div>
+                <div class="usage">Usage: !mode &lt;mode_name&gt;</div>
+                <div class="description">
+                    Switch between different calculator modes. Available modes:
+                    <ul>
+                        <li>scientific (1)</li>
+                        <li>graphing (2)</li>
+                        <li>matrix (3)</li>
+                        <li>statistical (4)</li>
+                        <li>financial (5)</li>
+                        <li>programming (6)</li>
+                        <li>unit (7)</li>
+                        <li>date (8)</li>
+                        <li>game (9)</li>
+                        <li>chemistry (10)</li>
+                        <li>physics (11)</li>
+                        <li>engineering (12)</li>
+                        <li>main (13)</li>
+                    </ul>
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!mode financial</code>
+                    <code class="example">!mode 5</code>
+                </div>
+            </div>
+        </div>
 
         <footer>
             <p>Blacksky Math Calculator Documentation | Version 1.0</p>
