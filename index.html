@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blacksky Math Calculator Documentation</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #ecf0f1;
+            --light-text: #bdc3c7;
+            --error-color: #e74c3c;
+            --success-color: #2ecc71;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 2.5rem;
+        }
+
+        .subtitle {
+            color: var(--light-text);
+            font-size: 1.2rem;
+        }
+
+        .toc {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .toc h2 {
+            color: var(--accent-color);
+            margin-bottom: 15px;
+        }
+
+        .toc-list {
+            columns: 3;
+            list-style-type: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 8px;
+        }
+
+        .toc-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .toc-list a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .section {
+            background-color: var(--secondary-color);
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--accent-color);
+        }
+
+        .command {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .command-name {
+            color: var(--success-color);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .aliases {
+            font-size: 0.9rem;
+            color: var(--light-text);
+            margin-bottom: 8px;
+        }
+
+        .usage {
+            font-family: 'Courier New', monospace;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .description {
+            margin-bottom: 10px;
+        }
+
+        .examples {
+            margin-top: 15px;
+        }
+
+        .examples h4 {
+            color: var(--light-text);
+            margin-bottom: 8px;
+        }
+
+        .example {
+            font-family: 'Courier New', monospace;
+            background-color: rgba(0, 0, 0, 0.3);
+            padding: 8px 12px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--accent-color);
+            color: var(--light-text);
+        }
+
+        @media (max-width: 768px) {
+            .toc-list {
+                columns: 2;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .toc-list {
+                columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Blacksky Math Calculator</h1>
+            <p class="subtitle">Comprehensive Command Documentation</p>
+        </header>
+
+        <div class="toc">
+            <h2>Table of Contents</h2>
+            <ul class="toc-list">
+                <li><a href="#basic-commands">Basic Commands</a></li>
+                <li><a href="#math-commands">Mathematical Operations</a></li>
+                <li><a href="#calculus-commands">Calculus Commands</a></li>
+                <li><a href="#stats-commands">Statistical Commands</a></li>
+                <li><a href="#matrix-commands">Matrix Operations</a></li>
+                <li><a href="#unit-commands">Unit Conversion</a></li>
+                <li><a href="#number-commands">Number Theory</a></li>
+                <li><a href="#finance-commands">Financial Calculations</a></li>
+                <li><a href="#date-commands">Date/Time Operations</a></li>
+                <li><a href="#system-commands">System Commands</a></li>
+                <li><a href="#programming-commands">Programming</a></li>
+                <li><a href="#graph-commands">Graph Theory</a></li>
+                <li><a href="#game-commands">Game Theory</a></li>
+                <li><a href="#chem-commands">Chemistry</a></li>
+                <li><a href="#physics-commands">Physics</a></li>
+                <li><a href="#eng-commands">Engineering</a></li>
+                <li><a href="#puzzle-commands">Math Puzzles</a></li>
+                <li><a href="#quiz-commands">Math Quiz</a></li>
+                <li><a href="#mode-commands">Calculator Modes</a></li>
+            </ul>
+        </div>
+
+        <!-- Basic Commands -->
+        <div class="section" id="basic-commands">
+            <h2>Basic Commands</h2>
+            
+            <div class="command">
+                <div class="command-name">!help / !?</div>
+                <div class="aliases">Aliases: ?</div>
+                <div class="usage">Usage: !help [command]</div>
+                <div class="description">
+                    Displays help information about available commands. Without arguments, lists all commands.
+                    With a command argument, shows detailed help for that specific command.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!help solve</code>
+                    <code class="example">!help</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!exit / !quit / !q</div>
+                <div class="usage">Usage: !exit</div>
+                <div class="description">
+                    Exits the calculator program.
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!clear</div>
+                <div class="usage">Usage: !clear</div>
+                <div class="description">
+                    Clears the terminal screen.
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!history / !h</div>
+                <div class="usage">Usage: !history</div>
+                <div class="description">
+                    Displays the command history (last 20 commands).
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!vars / !v</div>
+                <div class="usage">Usage: !vars</div>
+                <div class="description">
+                    Shows all currently defined variables and their values.
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!del / !d</div>
+                <div class="usage">Usage: !del &lt;variable_name&gt;</div>
+                <div class="description">
+                    Deletes a variable from memory.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!del x</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!save</div>
+                <div class="usage">Usage: !save [filename]</div>
+                <div class="description">
+                    Saves the current session (variables and history) to a JSON file.
+                    Default filename is "blacksky_session.json".
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!save my_calculation.json</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!load</div>
+                <div class="usage">Usage: !load [filename]</div>
+                <div class="description">
+                    Loads a previously saved session from a JSON file.
+                    Default filename is "blacksky_session.json".
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!load my_calculation.json</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!menu</div>
+                <div class="usage">Usage: !menu</div>
+                <div class="description">
+                    Displays the calculator mode menu.
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!mode</div>
+                <div class="usage">Usage: !mode &lt;mode_name&gt;</div>
+                <div class="description">
+                    Switches between different calculator modes. Available modes:
+                    scientific, graphing, matrix, statistical, financial, programming,
+                    unit, date, game, chemistry, physics, engineering.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!mode financial</code>
+                    <code class="example">!mode 5</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mathematical Operations -->
+        <div class="section" id="math-commands">
+            <h2>Mathematical Operations</h2>
+            
+            <div class="command">
+                <div class="command-name">!solve / !s</div>
+                <div class="usage">Usage: !solve &lt;equation&gt;</div>
+                <div class="description">
+                    Solves equations symbolically.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!solve x^2 - 4 = 0</code>
+                    <code class="example">!solve 2*x + 5 = 13</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!plot / !p</div>
+                <div class="usage">Usage: !plot &lt;function&gt; [xmin:xmax]</div>
+                <div class="description">
+                    Plots mathematical functions. Optionally specify x-axis range.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!plot sin(x)</code>
+                    <code class="example">!plot x^2 -2*pi:2*pi</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Calculus Commands -->
+        <div class="section" id="calculus-commands">
+            <h2>Calculus Commands</h2>
+            
+            <div class="command">
+                <div class="command-name">!derive / !dx</div>
+                <div class="usage">Usage: !derive &lt;function&gt;</div>
+                <div class="description">
+                    Calculates the derivative of a function.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!derive x^2 + 3*x</code>
+                    <code class="example">!derive sin(x)</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!integrate / !int</div>
+                <div class="usage">Usage: !integrate &lt;function&gt;</div>
+                <div class="description">
+                    Calculates the integral of a function.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!integrate x^2</code>
+                    <code class="example">!integrate cos(x)</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!limit / !lim</div>
+                <div class="usage">Usage: !limit &lt;function&gt; &lt;point&gt; [direction]</div>
+                <div class="description">
+                    Calculates the limit of a function at a point. Optional direction can be '+' or '-'.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!limit sin(x)/x 0</code>
+                    <code class="example">!limit 1/x 0 +</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!series</div>
+                <div class="usage">Usage: !series &lt;function&gt; &lt;point&gt; [order]</div>
+                <div class="description">
+                    Calculates series expansion of a function at a point. Optional order parameter (default is 6).
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!series sin(x) 0</code>
+                    <code class="example">!series exp(x) 1 4</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!factor</div>
+                <div class="usage">Usage: !factor &lt;expression&gt;</div>
+                <div class="description">
+                    Factors a polynomial expression.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!factor x^2 - 4</code>
+                    <code class="example">!factor x^3 + 3*x^2 + 3*x + 1</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!expand</div>
+                <div class="usage">Usage: !expand &lt;expression&gt;</div>
+                <div class="description">
+                    Expands a polynomial expression.
+                </div>
+                <div class="examples">
+                    <h4>Examples:</h4>
+                    <code class="example">!expand (x + 1)^3</code>
+                    <code class="example">!expand (x + y)*(x - y)</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Statistical Commands -->
+        <div class="section" id="stats-commands">
+            <h2>Statistical Commands</h2>
+            
+            <div class="command">
+                <div class="command-name">!stats / !stat</div>
+                <div class="usage">Usage: !stats &lt;data_points&gt;</div>
+                <div class="description">
+                    Calculates basic statistics (mean, median, mode, standard deviation, etc.) for a dataset.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!stats 5 10 15 20 25</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!regress</div>
+                <div class="usage">Usage: !regress &lt;x1,x2,...&gt;;&lt;y1,y2,...&gt;</div>
+                <div class="description">
+                    Performs linear regression on paired data points.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!regress 1,2,3,4;2,4,5,4</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!dist</div>
+                <div class="usage">Usage: !dist &lt;distribution&gt; &lt;params&gt; [x]</div>
+                <div class="description">
+                    Calculates probability distribution values. Available distributions:
+                    normal, uniform, binom, poisson, expon, gamma, beta, chi2, t, f, lognorm, weibull.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!dist normal 0 1 1.5</code>
+                </div>
+            </div>
+            
+            <div class="command">
+                <div class="command-name">!hist</div>
+                <div class="usage">Usage: !hist &lt;data_points&gt;</div>
+                <div class="description">
+                    Creates a histogram from the data.
+                </div>
+                <div class="examples">
+                    <h4>Example:</h4>
+                    <code class="example">!hist 5 10 15 20 25 30 35</code>
+                </div>
+            </div>
+        </div>
+
+        <!-- Continue with other sections... -->
+        <!-- Matrix, Unit Conversion, Number Theory, Financial, etc. -->
+
+        <footer>
+            <p>Blacksky Math Calculator Documentation | Version 1.0</p>
+            <p>© 2023 Blacksky Math Calculator Project</p>
+        </footer>
+    </div>
+</body>
+</html>
