@@ -1,6 +1,5 @@
 # Blacksky Math Calculator
 
-![Calculator Demo]
 
 A feature-rich, multi-mode scientific calculator implemented in Python with symbolic math capabilities, graphing, and advanced computational tools.
 
