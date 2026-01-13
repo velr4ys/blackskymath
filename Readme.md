@@ -1,6 +1,6 @@
 # Blacksky Math Calculator
-https://velr4ys.github.io/blackskymath/ <-- Full documentation
-![Calculator Demo](demo.gif) <!-- Consider adding a demo gif later -->
+
+![Calculator Demo]
 
 A feature-rich, multi-mode scientific calculator implemented in Python with symbolic math capabilities, graphing, and advanced computational tools.
 
